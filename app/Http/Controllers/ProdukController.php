@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Validator;
 
 class ProdukController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['only' => ['index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -48,6 +53,8 @@ class ProdukController extends Controller
            'stok' => 'required',
            'deskripsi' => 'required',
            'harga' => 'required',
+           'id_kategori' => 'required'
+
                 
        ]);
        if($validator->passes()){
@@ -65,7 +72,7 @@ class ProdukController extends Controller
     public function show( $produk)
     {
         //
-        $data = Produk::where('id',$produk)->first();
+        $data = Produk::with('kategori')->where('id',$produk)->first();
         if(!empty($data)){
             return $data;
         }
@@ -94,13 +101,14 @@ class ProdukController extends Controller
      */
     public function update(Request $request,$produk)
     {
-        $data = Produk::where('id',$produk)->first();
+        $data = Produk::with('kategori')->where('id',$produk)->first();
         if(!empty($data)){
             $validator = Validator::make($request->all(), [ 
             'nama_produk' => 'required',
             'stok' => 'required',
             'deskripsi' => 'required',
             'harga' => 'required',
+            'id_kategori' => 'required'
             
 
             ]);
