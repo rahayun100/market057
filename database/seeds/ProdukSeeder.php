@@ -14,11 +14,11 @@ class ProdukSeeder extends Seeder
         //
         DB::table('produks')->insert([
             
-            'nama_produk' => 'LAPTOP ASUS',
-            'stok' => '10',
-            'deskripsi' => 'BARU BELI',
-            'harga' => '1000',
-            'id_kategori' => '3'
+            'nama_produk' => '',
+            'stok' => '',
+            'deskripsi' => '',
+            'harga' => '',
+            'id_kategori' => ''
         ]);
     }
 }
