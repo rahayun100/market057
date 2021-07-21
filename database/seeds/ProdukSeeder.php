@@ -14,11 +14,11 @@ class ProdukSeeder extends Seeder
         //
         DB::table('produks')->insert([
             
-            'nama_produk' => '',
-            'stok' => '',
-            'deskripsi' => '',
-            'harga' => '',
-            'id_kategori' => ''
+            'nama_produk' => 'ASUS X44IKB',
+            'stok' => '100',
+            'deskripsi' => 'GARANSI RESMI ASUS CENTER',
+            'harga' => '100000',
+            'id_kategori' => '1'
         ]);
     }
 }

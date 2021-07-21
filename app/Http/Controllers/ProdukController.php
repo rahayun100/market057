@@ -10,7 +10,7 @@ class ProdukController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['only' => ['destroy']]);
+        $this->middleware('auth:api', ['only' => ['create']]);
     }
 
     /**
