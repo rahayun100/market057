@@ -23,7 +23,7 @@ class ProdukController extends Controller
         //
         //echo 'Databases Suskses  Terhubung';
         //$data = Produk::all();  
-        $data = Produk::with('kategori')->get();  
+        $data = Produk::with('bisa')->get();  
           
         return response()->json($data);
     
